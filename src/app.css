@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+	--color-bg-root: #050505;
+	--color-bg-card: #0a0a0a;
+	--color-bg-elevated: #111111;
+	--color-bg-hover: #161616;
+	--color-bg-active: #1a1a1a;
+
+	--color-text-primary: #ffffff;
+	--color-text-secondary: #888888;
+	--color-text-muted: #444444;
+
+	--color-accent: #ffffff;
+	--color-accent-hover: #cccccc;
+
+	--color-border: #1a1a1a;
+	--color-border-subtle: #111111;
+
+	--color-success: #22c55e;
+	--color-error: #ef4444;
+	--color-warning: #f59e0b;
+
+	--font-sans: "Geist", system-ui, -apple-system, sans-serif;
+	--font-mono: "Geist Mono", ui-monospace, monospace;
+}
+
+@font-face {
+	font-family: "Geist";
+	src: url("/fonts/Geist-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Geist";
+	src: url("/fonts/Geist-Bold.woff2") format("woff2");
+	font-weight: 600 700;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Geist Mono";
+	src: url("/fonts/GeistMono-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-display: swap;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+	height: 100%;
+	overflow: hidden;
+	background: var(--color-bg-root);
+	color: var(--color-text-primary);
+	font-family: var(--font-sans);
+	font-size: 14px;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background: #222;
+	border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #333;
+}
+
+.transition-default {
+	transition: all 150ms ease-out;
+}
+
+@keyframes skeleton-pulse {
+	0%,
+	100% {
+		opacity: 0.4;
+	}
+	50% {
+		opacity: 0.8;
+	}
+}
+.animate-skeleton {
+	animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.scrollbar-hide {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}
+/* ── Player animations ── */
+
+@keyframes fade-in-up {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.animate-fade-in-up {
+	animation: fade-in-up 200ms ease-out forwards;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.animate-fade-in {
+	animation: fade-in 150ms ease-out forwards;
+}
