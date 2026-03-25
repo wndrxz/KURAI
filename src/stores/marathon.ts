@@ -29,6 +29,7 @@ export interface MarathonStatus {
 	sessionStartedAt: number | null;
 	queueRemaining: number;
 	episodesPerHour: number;
+	statusText: string | null;
 }
 
 export interface SessionInfo {
@@ -53,6 +54,7 @@ const defaultStatus: MarathonStatus = {
 	sessionStartedAt: null,
 	queueRemaining: 0,
 	episodesPerHour: 0,
+	statusText: null,
 };
 
 interface MarathonState {
